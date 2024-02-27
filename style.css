@@ -1,0 +1,53 @@
+
+*
+{
+margin: 50;
+padding: 0;
+box-sizing: border-box;
+cursor: none;
+font-family: 'Neue Montreal'
+}
+body
+{
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background: black;
+}
+ul{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+ul li 
+{
+    list-style: none;
+}
+ul li a 
+{
+    position: relative;
+    display: inline-block;
+    margin: 5px 0;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: #fff;
+}
+
+.cursor {
+    position: fixed;
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    background-image: url('image/pencil.png'); /* Path to your pencil icon */
+    background-size: contain; /* Ensure the image covers the area without repeating */
+    background-repeat: no-repeat; /* Ensure the image does not tile */
+    pointer-events: none;
+    mix-blend-mode: lighten; /* Adjusted for better visibility on dark backgrounds */
+}
+
+ul li:hover .cursor {
+    transform: translate(-50%, -50%) scale(4);
+    background-color: black; /* Only set the color, not the entire background shorthand */
+    box-shadow: 0 0 0 100vh white;
+}

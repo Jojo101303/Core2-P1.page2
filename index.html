@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginning Text1</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .clicked {
+            background-color: rgb(54, 107, 125);
+        }
+        .button-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Changed from 'right: 20px;' */
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        li {
+            text-align: center;
+        }
+        .button-container.right {
+            left: auto;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#" onclick="changeBackgroundColor(this)">In life, the number of beginnings is exactly equal to the number of endings.</a></li>
+        <li><a href="#" onclick="changeBackgroundColor(this)">No one has yet to begin a life who will not end it.</a></li>
+        <li><a href="#" onclick="changeBackgroundColor(this)">In poetry, the number of beginnings so far exceeds the number of endings that we cannot even conceive of it.</a></li>
+        <li><a href="#" onclick="changeBackgroundColor(this)">Not every poem is finished—one poem is abandoned, another catches fire and is carried away by the wind.</a></li>
+        <li><a href="#" onclick="changeBackgroundColor(this)">Which may be an ending, but it is the ending of a poem without an end.</a></li>
+        <li><a href="#" onclick="changeBackgroundColor(this)">Paul Valéry, the French poet and thinker, once said that no poem is ever ended, that every poem is merely abandoned.</a></li>
+        <li><a href="#" onclick="changeBackgroundColor(this)">This saying is also attributed to Stéphane Mallarmé, for where quotations begin is in a cloud. </a></li>
+        <li><a href="#" onclick="changeBackgroundColor(this)">Paul Valéry also described his perception of first lines so vividly, and to my mind so accurately</a></li>
+        <li><a href="#" onclick="changeBackgroundColor(this)">that i have never forgotten it: the opening line of a poem, he said, is like finding a fruit on the ground</a></li>
+        <li><a href="#" onclick="changeBackgroundColor(this)">a piece of fallen fruit you have never seen before, and the poets task is to create the tre from which such a fruit would fall.</a></li>
+        <div class="cursor"></div>
+    </ul>
+    <div class="heartbeat"></div>
+    <div class="button-container">
+        <button class="button" onclick="resetBackgroundColor()">Reset Background</button>
+    </div>
+    <div class="button-container right">
+        <a href="https://jojo101303.github.io/Core2-P1.page3/" class="button">Continue</a>
+    </div>
+    <script type="text/javascript">
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.pageX + "px";
+            cursor.style.top = e.pageY + "px";
+        });
+
+        function changeBackgroundColor(element) {
+            element.parentElement.classList.add('clicked');
+        }
+
+        function resetBackgroundColor() {
+            const clickedItems = document.querySelectorAll('.clicked');
+            clickedItems.forEach(item => {
+                item.classList.remove('clicked');
+            });
+        }
+
+        function performAction() {
+            // Add your action here for the new button
+        }
+    </script>
+</body>
+</html>
